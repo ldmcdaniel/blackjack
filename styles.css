@@ -9,6 +9,19 @@ body {
 	border-radius: 15px;
 	border: solid brown 8px;
 	padding: 5px 75px;
+	margin: 10px;
+}
+
+.new-game:hover {
+	background-color: white;
+	color: brown;
+	border: solid black 8px;
+}
+.new-game:hover span {
+	display: none;
+}
+.new-game:hover:before {
+	content: "New Deal";
 }
 .container {
 	background-color: #308834;
@@ -40,7 +53,32 @@ body {
 	margin-right: -195px;
 }
 .hit-me {
+	background-color: #308834;
+	color: white;
+	border: solid 10px black;
+	font-size: 50px;
+	margin: 20px;
+	border-radius: 10px;
+}
+.hit-me:hover {
+	background-color: black;
+	border: solid 10px white;
+	color: #308834;
 }
 .buttons {
 	text-align: center;
+}
+.stand {
+	background-color: red;
+	color: white;
+	border: solid 10px black;
+	font-size: 50px;
+	margin: 20px;
+	border-radius: 10px;
+}
+.stand:hover {
+	background-color: black;
+	border: solid 10px white;
+	color: red;
+
 }

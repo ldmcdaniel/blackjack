@@ -17,7 +17,7 @@ function getJSON(url, cb) {
   request.onload = function() {
     if (request.status >= 200 && request.status < 400) {
       cb(JSON.parse(request.responseText));
-    } 
+    }
   };
 	request.send();
 }
@@ -62,7 +62,8 @@ function newGame() {
   dealerScore = 0;
   $(".dealer").html('<img class="dealer-cards back" src="imgs/card-back-dealer.png">');
   $(".player").html('');
-  $(".buttons").show();
+  $(".hit-me").show();
+  $(".stand").show();
   getJSON(JSONP_PROXY + deckOfCards + 'shuffle/?deck_count=6', function (data) {
     deckID = data.deck_id;
     getJSON(JSONP_PROXY + deckOfCards + 'draw/' + deckID + '/?count=3', function (d) {
@@ -82,7 +83,7 @@ function newGame() {
 }
 
 function dealerSecondCard() {
-    getJSON(JSONP_PROXY + deckOfCards + 'draw/' + deckID + '/?count=1', function (d) {
+  getJSON(JSONP_PROXY + deckOfCards + 'draw/' + deckID + '/?count=1', function (d) {
     d.cards.forEach(function (card, i) {
       $(".dealer").append("<img class='dealer-cards' src='" + card.image + "'</img>");
       addToDealerScore(card);
@@ -93,7 +94,7 @@ function dealerSecondCard() {
 
 //  --------------Playing the Game --------------  //
 
-//get the cards 
+//get the cards
 
 newGame();
 
@@ -103,7 +104,8 @@ $(".hit-me").click (function () {
       $(".player").append("<img class='player-cards' src='" + card.image + "'</img>");
       addToPlayerScore(card);
       if (playerScore > 21) {
-        $(".buttons").hide();
+        $(".hit-me").hide();
+        $(".stand").hide();
         $(".back").hide();
         dealerSecondCard();
       }
@@ -112,8 +114,9 @@ $(".hit-me").click (function () {
 })
 
 $(".stand").click (function () {
-  debugger;
-  $(".buttons").hide();
+  alert("works");
+  $(".hit-me").hide();
+  $(".stand").hide();
   $(".back").hide();
   dealerSecondCard();
   if (dealerScore < 17) {
