@@ -1,0 +1,46 @@
+body {
+	background-image: url(https://www.colourbox.com/preview/4736062-seamless-card-suits-pattern.jpg)
+}
+.new-game {
+	background-color: black;
+	color: white;
+	text-align: center;
+	font-size: 70px;
+	border-radius: 15px;
+	border: solid brown 8px;
+	padding: 5px 75px;
+}
+.container {
+	background-color: #308834;
+	width: 100%;
+	height: 750px;
+	margin: auto;
+	border: solid 20px brown;
+	border-top: none;
+	box-sizing : border-box;
+	margin: 0px;
+	border-radius: 0% 0% 40% 40%;
+}
+.dealer, .player, .title {
+	text-align: center;
+	padding: 20px;
+}
+.dealer {
+	margin-right: 97px;
+}
+.player {
+	margin-right: 195px
+}
+.dealer-cards {
+	width: 113px;
+	height: 157px;
+	margin-right: -97px;
+}
+.player-cards {
+	margin-right: -195px;
+}
+.hit-me {
+}
+.buttons {
+	text-align: center;
+}
