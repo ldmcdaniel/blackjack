@@ -78,7 +78,7 @@ function newGame() {
           console.log("D: " + dealerScore + ' + ' + dealerAces);
         }
       })
-    }) 
+    })
   })
 }
 
@@ -114,7 +114,7 @@ $(".hit-me").click (function () {
 })
 
 $(".stand").click (function () {
-  alert("works");
+  // alert("works");
   $(".hit-me").hide();
   $(".stand").hide();
   $(".back").hide();
